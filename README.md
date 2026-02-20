@@ -1,8 +1,8 @@
-# Windows 11 Auto-Deployer & Driver Cloner
+# Windows-11-AutoDeployer
 
 An automated, end-to-end PowerShell utility designed to create a customized, bootable Windows 11 installation USB. This script downloads a base Windows image, clones the drivers from the active host machine, injects them into the installation media, and prepares a Secure Boot-compliant USB drive.
 
-Ideal for system administrators, IT professionals, and hardware enthusiasts looking to create "self-replicating" installation media specifically tailored to a machine's hardware profile.
+Ideal for system administrators, IT professionals, and hardware enthusiasts looking to automate deployment and create "self-replicating" installation media tailored to a specific hardware profile.
 
 ## ✨ Key Features
 
@@ -10,7 +10,7 @@ Ideal for system administrators, IT professionals, and hardware enthusiasts look
 * **Automated DISM Injection:** Handles the mounting, injection, and committing of drivers into the Windows Image (`install.wim` / `install.esd`) seamlessly.
 * **Intelligent Image Conversion:** Detects compressed `.esd` files and natively converts them to editable `.wim` formats on the fly.
 * **Secure Boot Revocation Fix (EFI Transplant):** Replaces older, potentially revoked bootloaders (`bootx64.efi`) in the ISO with the healthy, signed bootloader from the active host OS. This prevents the "Security Violation" red screen in Rufus or native boot setups.
-* **Automated USB Provisioning:** Detects removable drives, formats them to UEFI-required FAT32, and handles the file transfer.
+* **Automated USB Provisioning:** Detects removable drives, formats them to UEFI-required FAT32, and handles the file transfer automatically.
 * **Large File Splitting (`.swm`):** Automatically detects if the customized `install.wim` exceeds the 4GB FAT32 file size limit and uses DISM to split the image into smaller `.swm` chunks for seamless Windows Setup integration.
 
 ## ⚠️ Prerequisites
@@ -18,7 +18,7 @@ Ideal for system administrators, IT professionals, and hardware enthusiasts look
 * **Operating System:** Windows 10 or Windows 11.
 * **Privileges:** Must be executed in an **Elevated PowerShell Session** (Run as Administrator).
 * **Storage Space:** At least 20GB of free space on the `C:\` drive for the temporary staging area (`C:\Temp\Win11_Build`).
-* **USB Flash Drive:** An empty USB drive (8GB minimum, 16GB+ recommended). **All data on this drive will be destroyed.**
+* **USB Flash Drive:** An empty USB drive (8GB minimum, 16GB+ recommended). **All data on the selected drive will be destroyed.**
 
 ## 🚀 How It Works (The Pipeline)
 
