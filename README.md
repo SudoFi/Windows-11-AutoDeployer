@@ -1,3 +1,6 @@
+<div align="center">
+  <img src="banner.png" alt="Windows 11 AutoDeployer Banner" width="100%">
+</div>
 # Windows-11-AutoDeployer
 
 An automated, end-to-end PowerShell utility designed to create a customized, bootable Windows 11 installation USB. This script downloads a base Windows image, clones the drivers from the active host machine, injects them into the installation media, and prepares a Secure Boot-compliant USB drive.
